@@ -1,21 +1,32 @@
 {
-    "name": "gofuroov/yii2-mysql-dumper",
-    "description": "Dump databases",
-    "type": "yii2-extension",
-    "keywords": ["yii2","extension","mysql","dump","dumper","telegram","db"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Olimjon Gofurov",
-            "email": "gofuroov@gmail.com"
-        }
-    ],
-    "require": {
-        "yiisoft/yii2": "~2.0.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "gofuroov\\dumper\\mysql\\": ""
-        }
+  "name": "gofuroov/yii2-mysql-dumper",
+  "description": "Dump databases",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "extension",
+    "mysql",
+    "dump",
+    "dumper",
+    "telegram",
+    "db"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Olimjon Gofurov",
+      "email": "gofuroov@gmail.com"
     }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.0",
+    "ifsnop/mysqldump-php": "dev-master",
+    "ext-fileinfo": "*",
+    "ext-zip": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "gofuroov\\dumper\\mysql\\": "src"
+    }
+  }
 }
