@@ -62,6 +62,8 @@ class Dumper extends Controller implements \yii\base\BootstrapInterface
          */
         Console::output("Start zipping...");
         $zip_file = $this->createZip($sql_file, $filename . '.zip');
+        // delete sql file
+        unlink($sql_file);
         Console::output("Zipping finished.\n");
 
 
@@ -78,7 +80,6 @@ class Dumper extends Controller implements \yii\base\BootstrapInterface
                  * Deleting files
                  */
                 Console::output("Start deleting files...");
-                unlink($sql_file);
                 unlink($zip_file);
                 Console::output("Deleting finished.\n");
             }
