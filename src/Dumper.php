@@ -16,7 +16,7 @@ class Dumper extends Controller implements \yii\base\BootstrapInterface
     public string $name = 'database';
     public string $append_name = '';
     public string $path = "@runtime";
-    public bool $send_via_telegram = true;
+    public bool $send_via_telegram = false;
     public string $bot_token = '';
     public string $chat_id = '';
     public bool $delete_after_send = true;
@@ -27,8 +27,15 @@ class Dumper extends Controller implements \yii\base\BootstrapInterface
     public function bootstrap($app)
     {
         if ($app instanceof Application) {
-            $app->controllerMap['Dumper'] = [
-                'class' => self::class
+            $app->controllerMap['dumper'] = [
+                'class' => self::class,
+                'name' => $this->name,
+                'append_name' => $this->append_name,
+                'path' => $this->path,
+                'send_via_telegram' => $this->send_via_telegram,
+                'bot_token' => $this->bot_token,
+                'chat_id' => $this->chat_id,
+                'delete_after_send' => $this->delete_after_send
             ];
         }
     }
