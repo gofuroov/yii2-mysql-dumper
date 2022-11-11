@@ -2,6 +2,7 @@
   "name": "gofuroov/yii2-mysql-dumper",
   "description": "Dump databases",
   "type": "yii2-extension",
+  "minimum-stability": "stable",
   "keywords": [
     "yii2",
     "extension",
